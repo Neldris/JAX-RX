@@ -68,7 +68,6 @@ class Best1{
    List<Best> best = new ArrayList<>();
    private Double points;
    private String looker;
-   private Object obj;
    private static Best1 instance;
    private Best1(){}
    
