@@ -90,10 +90,11 @@ class Best1{
 public Best getOne(){
 	ListIterator<Best> blist = best.listIterator();
 	if(blist.hasNext()){
-		return blist.next();
+		return best.get(best.size()-1);
 	}
 	return null;
 }
+
 public Best getOne(int val){
 	if(best.isEmpty()) return null;
 	return best.get(val);
