@@ -2,9 +2,11 @@ package com.rx.king;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
-
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -40,6 +42,16 @@ public class EntryPoint {
 		b1.setPoints(30.46d);
 		return Response.status(Status.OK).entity(b1).build();
 	}
+	
+	@POST
+	@Path("/take")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response received(Best b){
+		Best1 b1 = Best1.getInstace();
+		b1.setOne(b);
+		return Response.status(Status.ACCEPTED).entity(b1).build();
+	}
 }
 
 
@@ -71,7 +83,22 @@ class Best1{
    private static Best1 instance;
    private Best1(){}
    
- public synchronized static Best1  getInstace(){
+ public void setOne(Best b) {
+	best.add(b);
+	
+}
+public Best getOne(){
+	ListIterator<Best> blist = best.listIterator();
+	if(blist.hasNext()){
+		return blist.next();
+	}
+	return null;
+}
+public Best getOne(int val){
+	if(best.isEmpty()) return null;
+	return best.get(val);
+}
+public synchronized static Best1  getInstace(){
 	 if(instance == null){
 		 instance = new Best1();
 	 }
