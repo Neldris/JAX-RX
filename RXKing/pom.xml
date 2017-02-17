@@ -26,37 +26,48 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<!-- Properties -->
+	<properties>
+		<jersey.version>1.19</jersey.version>
+		<asm.version>3.3.1</asm.version>
+		<json.version>20140107</json.version>
+		<jackson.version>1.9.12</jackson.version>
+	</properties>
+	
+
 	<dependencies>
 		<dependency>
 			<groupId>asm</groupId>
 			<artifactId>asm</artifactId>
-			<version>3.3.1</version>
+			<version>${asm.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-bundle</artifactId>
-			<version>1.19</version>
+			<version>${jersey.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<version>20140107</version>
+			<version>${json.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-server</artifactId>
-			<version>1.19</version>
+			<version>${jersey.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-core</artifactId>
-			<version>1.19</version>
+			<version>${jersey.version}</version>
 		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-jaxrs -->
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-jaxrs</artifactId>
-			<version>1.9.12</version>
+			<version>${jackson.version}</version>
 		</dependency>
 
 	</dependencies>
